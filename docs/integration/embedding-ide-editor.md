@@ -19,7 +19,7 @@ Insert editor by following code:
 `url` has to be in following format `https://agorapp.dev/ide-embed/{topic}/{slug}`, where `{topic}` and `{slug}` is 
 defined by AgorApp Challenge/Course.
 
-Example of live URL: `https://agorapp.dev/ide-embed/solidity/fizz-buzz`
+Example of live URL: `https://agorapp.dev/ide-embed/solidity/optimized-array-sum`
 
 ## Advanced usage
 
@@ -28,17 +28,19 @@ in order to match the solution with the user.
 
 Communication is based on [Window: postMessage() method](https://developer.mozilla.org/en-US/docs/Web/API/Window/postMessage).
 
-### MetaMask ID
+### External ID
 
-Here is a sample code to pass the metamask ID towards the IDE.
+Here is a sample code to pass the external ID towards the IDE.
 
 ```javascript
-let metamaskId = '0xFFF00000000000000000000000000FFF';
+let externalId = '0xFFF00000000000000000000000000FFF';
 document.getElementById("editor").contentWindow.postMessage({
-        type: 'set-metamask-id',
-        value: metamaskId,
+        action: 'set-external-id',
+        data: {
+            type: 'metamask',
+            value: externalId
+        },
     },
     "*"
 );
 ```
-
