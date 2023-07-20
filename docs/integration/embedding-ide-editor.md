@@ -44,3 +44,19 @@ document.getElementById("editor").contentWindow.postMessage({
     "*"
 );
 ```
+
+## Customizing the appearance of the IDE
+
+You can customize the behavior of the IDE by using parameters in the URL.
+
+The following parameters are supported:
+- `brand` - allows you to change the color of the buttons of the IDE. When not mentioned, the AgorApp brand will be used as default one. The following values are supported:
+  - `rare-skills` - purple brand
+- `hideTheory` - allows you to hide theory sidebar and menu. The following values are supported:
+  - `1` - hide theory sidebar
+  - `0` - hide theory sidebar. Default value.
+
+Example:
+```
+https://agorapp.dev/ide-embed/solidity/optimized-array-sum?brand=rare-skills&hideTheory=1
+```
